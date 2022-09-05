@@ -1,8 +1,21 @@
 {
     "name": "Auth",
     "alias": "auth",
-    "description": "",
-    "keywords": [],
+    "description": "Auth Module for VILT framework to convert any Model to Auth Model with full API",
+    "keywords": [
+        "laravel",
+        "VILT",
+        "base",
+        "resource",
+        "page",
+        "vilt-admin",
+        "Vilt stack",
+        "admin panel",
+        "admin one",
+        "vuejs",
+        "ineriajs",
+        "tailwind.css"
+    ],
     "priority": 0,
     "providers": [
         "Modules\\Auth\\Providers\\AuthServiceProvider"
