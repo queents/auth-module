@@ -272,28 +272,27 @@ class AuthGenerator
 
         if(!is_dir($path)){
             File::makeDirectory($path);
-            $authController = view('auth::templates.api', [
-                "sg" => $sg,
-                "sp" => $sp,
-                "model" => $model,
-                "table" => $this->table,
-                "module" => $this->module,
-                "cols" => $this->getFileds()
-            ]);
-
-            $authRoutes = view('auth::templates.route', [
-                "sg" => $sg,
-                "sp" => $sp,
-                "model" => $model,
-                "table" => $this->table,
-                "module" => $this->module,
-                "cols" => $this->getFileds()
-            ]);
-            File::put($path.$model . 'Auth.php', $authController);
-            file_put_contents($routePath.'api.php', $authRoutes);
-
-//            File::put($this->module.'/Routes/api.php', $authRoutes);
         }
+        $authController = view('auth::templates.api', [
+            "sg" => $sg,
+            "sp" => $sp,
+            "model" => $model,
+            "table" => $this->table,
+            "module" => $this->module,
+            "cols" => $this->getFileds()
+        ]);
+        $authRoutes = view('auth::templates.route', [
+            "sg" => $sg,
+            "sp" => $sp,
+            "model" => $model,
+            "table" => $this->table,
+            "module" => $this->module,
+            "cols" => $this->getFileds()
+        ]);
+        File::put($path.$model . 'Auth.php', $authController);
+        file_put_contents($routePath.'api.php', $authRoutes);
+
+
 
     }
 

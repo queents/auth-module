@@ -71,6 +71,10 @@ class GenerateAuthCommand extends Command
                 $newGenerator->generateApi();
             }
 
+            if($authType == 'web'){
+                $newGenerator->generateWeb();
+            }
+
             $this->info('Generated Full Auth & Login With'.' '.$loginType .' '.' on the '.' '.$authType .' '.'Stage' );
 
         } catch (Exception $e) {
